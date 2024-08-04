@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>EMPLOYEE TABLE DATA</h1>
+        <table border="3px">
+
+            <tr>
+                <th>empno</th>
+                <th>ename</th>
+                <th>job</th>
+                <th>sal</th>
+                <th>comm</th>
+                <th>hiredate</th>
+                <th>mgr</th>
+                <th>deptno</th>
+
+            </tr>
+
+            {% for edo in LEO %}
+                <tr>
+                    <td>{{edo.empno}}</td>
+                    <td>{{edo.ename}}</td>
+                    <td>{{edo.job}}</td>
+                    <td>{{edo.sal}}</td>
+                    <td>{{edo.comm}}</td>
+                    <td>{{edo.hiredate}}</td>
+                    <td>{{edo.mgr}}</td>
+                    <td>{{edo.deptno.deptno}}</td>
+
+
+                </tr>
+            {% endfor %}
+
+        </table>
+    </center>
+</body>
+</html>

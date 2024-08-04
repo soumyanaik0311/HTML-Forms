@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Table</title>
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        center {
+            width: 100%;
+        }
+    </style> -->
+</head>
+<body>
+    <center>
+        <h1>Employee Table</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="empno">Emp No:</label>
+            <input type="text" name="empno" id="empno"><br>
+
+            <label for="ename">Emp Name:</label>
+            <input type="text" name="ename" id="ename"><br>
+
+            <label for="job">Job:</label>
+            <input type="text" name="job" id="job"><br>
+
+            <label for="sal">Salary:</label>
+            <input type="text" name="sal" id="sal"><br>
+
+            <label for="comm">Commission:</label>
+            <input type="text" name="comm" id="comm"><br>
+
+            <label for="hiredate">Hiredate:</label>
+            <input type="date" name="hiredate" id="hiredate"><br>
+
+            <label for="deptno">Dept No:</label>
+            <select name="deptno" id="deptno">
+                {% for do in LDO %}
+                    <option value="{{do.deptno}}">{{do.dname}}</option>
+                {% endfor %}
+            </select><br>
+
+            <label for="mgr">Manager:</label>
+            <select name="mgr" id="mgr">
+                <option value="">-- Select Manager --</option>
+                {% for mo in LEO %}
+                    <option value="{{mo.empno}}">{{mo.ename}}</option>
+                {% endfor %}
+            </select><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </center>
+</body>
+</html>
